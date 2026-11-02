@@ -1,6 +1,8 @@
 import { commands, endpoints, requestPulse, formatPulse, usage } from '../lib/pulse-api.js'
+import { reactToMessage } from '../lib/reactions.js'
 
 const handler = async (m, { conn, command, text = '', usedPrefix = '.' }) => {
+  await reactToMessage(conn, m, '🕒')
   let spec = commands[command]
   if (command === 'pulse') {
     const match = text.match(/^\s*(\S+)\s+(\S+)(?:\s+([\s\S]*))?$/)
@@ -11,11 +13,16 @@ const handler = async (m, { conn, command, text = '', usedPrefix = '.' }) => {
   if (!spec) return m.reply('Endpoint desconocido. Usa el menú para ver los disponibles.')
   try {
     const result = await requestPulse(spec, text)
-    if (result.kind === 'json') return m.reply(formatPulse(result.result))
+    if (result.kind === 'json') {
+      await m.reply(formatPulse(result.result))
+      await reactToMessage(conn, m, '⭐')
+      return
+    }
     const content = { [result.kind]: result.data, mimetype: result.mimetype }
     if (result.kind === 'document') content.fileName = 'pulse-download'
     if (result.kind !== 'audio') content.caption = 'Pulse API'
     await conn.sendMessage(m.chat, content, { quoted: m })
+    await reactToMessage(conn, m, '⭐')
   } catch (error) {
     console.error('[Pulse API]', error.message)
     const detail = /Faltan parámetros|Parámetro desconocido|Demasiados valores/.test(error.message) ? `\n${usage(spec, usedPrefix)}` : ''

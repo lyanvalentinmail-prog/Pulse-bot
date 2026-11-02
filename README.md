@@ -17,6 +17,14 @@ Elige `qr` para vincular desde **WhatsApp → Dispositivos vinculados** o `code`
 
 ## Menú y comandos
 
+Al enviar `.menu` se genera una tarjeta visual con clima, hora (con segundos), usuario y tipo de chat/rol, junto al botón de lista en el mismo mensaje. WhatsApp no interpreta HTML dentro de mensajes, por lo que la tarjeta se envía como imagen; si no se puede generar o enviar la lista, se usa texto. El clima se consulta en Pulse API para **Maldonado** por defecto y se guarda hasta 10 minutos. Cambia la ciudad y la zona horaria (IANA) antes de iniciar el bot:
+
+```sh
+PULSE_MENU_CITY="Montevideo" PULSE_MENU_TZ="America/Montevideo" npm start
+```
+
+Si no defines la zona horaria, se usa la del sistema; si la API de clima falla se muestra «No disponible». La hora es la del momento de generar el mensaje, no un reloj que se actualice en el chat. El modo indica si el chat es privado o de grupo y si el usuario es owner; no cambia la privacidad del bot. Reacciones: 🕒 al comenzar y ⭐ al completar la respuesta.
+
 Envía `.menu`, selecciona una categoría y verás sus comandos. Si la lista no funciona en tu cliente, usa `.menu anime`, `.menu ia`, `.menu canvas`, `.menu descargas`, `.menu busquedas`, `.menu imagenes`, `.menu herramientas`, `.menu audios` o `.menu random`. La categoría juegos está vacía en el catálogo de Pulse y no aparece.
 
 Se incluyen los **76 endpoints** del catálogo público de Pulse API en la instantánea `lib/pulse-catalog.json`. Cada uno tiene el comando `.p_<categoría>_<endpoint>` y también se puede invocar como `.pulse <categoría> <endpoint>`. Por ejemplo:
