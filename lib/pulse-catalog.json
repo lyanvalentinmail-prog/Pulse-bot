@@ -1,0 +1,1876 @@
+[
+  {
+    "id": "anime",
+    "name": "ANIME",
+    "desc": "Anime, manga, Pokémon y personajes (siempre sin NSFW)",
+    "endpoints": [
+      {
+        "id": "animeinfo",
+        "desc": "Ficha de anime de MyAnimeList: sinopsis, nota, episodios, estudios y portada.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "naruto",
+            "desc": "Título a buscar o ID de MyAnimeList",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "5",
+            "desc": "Cuántos resultados devolver (1 - 20)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "mangainfo",
+        "desc": "Ficha de manga de MyAnimeList: sinopsis, tomos, capítulos, autores y portada.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "berserk",
+            "desc": "Título a buscar o ID de MyAnimeList",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "5",
+            "desc": "Cuántos resultados devolver (1 - 20)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "gacha",
+        "desc": "Tirada de gacha: una imagen SFW de personaje con rareza, estrellas y poder.",
+        "media": "image",
+        "params": [
+          {
+            "name": "kind",
+            "example": "",
+            "desc": "Categoría de la carta (vacío = al azar)",
+            "required": false,
+            "options": [
+              "",
+              "waifu",
+              "maid",
+              "neko"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pokemon",
+        "desc": "Datos de un Pokémon: tipos, habilidades, stats, altura, peso, imagen y descripción de la Pokédex.",
+        "media": "image",
+        "params": [
+          {
+            "name": "name",
+            "example": "pikachu",
+            "desc": "Nombre en inglés o número de Pokédex (vacío = al azar)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "waifu",
+        "desc": "Imagen aleatoria de waifu (nekos.best o waifu.pics, sólo SFW).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "maid",
+        "desc": "Imagen aleatoria de maid (sólo SFW).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "neko",
+        "desc": "Imagen aleatoria de neko (sólo SFW).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "canvas",
+    "name": "CANVAS",
+    "desc": "Memes e imágenes generadas al vuelo",
+    "endpoints": [
+      {
+        "id": "cartelanime1",
+        "desc": "Cartel Anime 1: añade texto o una imagen.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Texto del cartel",
+            "required": false
+          },
+          {
+            "name": "image",
+            "example": "",
+            "desc": "Imagen opcional para el cartel",
+            "required": false
+          },
+          {
+            "name": "mode",
+            "example": "text",
+            "desc": "Mostrar texto o imagen",
+            "required": false,
+            "options": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto",
+            "required": false
+          },
+          {
+            "name": "size",
+            "example": "1",
+            "desc": "Escala del texto",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "cartelanime2",
+        "desc": "Cartel Anime 2: añade texto o una imagen.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Texto del cartel",
+            "required": false
+          },
+          {
+            "name": "image",
+            "example": "",
+            "desc": "Imagen opcional para el cartel",
+            "required": false
+          },
+          {
+            "name": "mode",
+            "example": "text",
+            "desc": "Mostrar texto o imagen",
+            "required": false,
+            "options": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto",
+            "required": false
+          },
+          {
+            "name": "size",
+            "example": "1",
+            "desc": "Escala del texto",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "cartelanime3",
+        "desc": "Cartel Anime 3: añade texto o una imagen.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Texto del cartel",
+            "required": false
+          },
+          {
+            "name": "image",
+            "example": "",
+            "desc": "Imagen opcional para el cartel",
+            "required": false
+          },
+          {
+            "name": "mode",
+            "example": "text",
+            "desc": "Mostrar texto o imagen",
+            "required": false,
+            "options": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto",
+            "required": false
+          },
+          {
+            "name": "size",
+            "example": "1",
+            "desc": "Escala del texto",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "cartelanime4",
+        "desc": "Cartel Anime 4: añade texto o una imagen.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Texto del cartel",
+            "required": false
+          },
+          {
+            "name": "image",
+            "example": "",
+            "desc": "Imagen opcional para el cartel",
+            "required": false
+          },
+          {
+            "name": "mode",
+            "example": "text",
+            "desc": "Mostrar texto o imagen",
+            "required": false,
+            "options": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto",
+            "required": false
+          },
+          {
+            "name": "size",
+            "example": "1",
+            "desc": "Escala del texto",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "cartelbob",
+        "desc": "Cartel Bob: añade texto o una imagen.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Texto del cartel",
+            "required": false
+          },
+          {
+            "name": "image",
+            "example": "",
+            "desc": "Imagen opcional para el cartel",
+            "required": false
+          },
+          {
+            "name": "mode",
+            "example": "text",
+            "desc": "Mostrar texto o imagen",
+            "required": false,
+            "options": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto",
+            "required": false
+          },
+          {
+            "name": "size",
+            "example": "1",
+            "desc": "Escala del texto",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "whatsappquote",
+        "desc": "Mensaje de WhatsApp con menú de reacciones; admite cita y hora.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Mensaje principal",
+            "required": true
+          },
+          {
+            "name": "quote",
+            "example": "",
+            "desc": "Mensaje citado; al completarlo se usa la variante con cita",
+            "required": false
+          },
+          {
+            "name": "author",
+            "example": "Tú",
+            "desc": "Autor de la cita",
+            "required": false
+          },
+          {
+            "name": "time",
+            "example": "",
+            "desc": "Hora del mensaje",
+            "required": false
+          },
+          {
+            "name": "variant",
+            "example": "simple",
+            "desc": "Variante de la referencia",
+            "required": false,
+            "options": [
+              "simple",
+              "cita"
+            ]
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del mensaje, hex sin #",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "imessagequote",
+        "desc": "Mensaje de iMessage con reacciones y menú.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola Pulse",
+            "desc": "Mensaje",
+            "required": true
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del mensaje, hex sin #",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "imessagetyping",
+        "desc": "Conversación con teclado de iMessage.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "¿Qué quieres?",
+            "desc": "Mensaje recibido",
+            "required": true
+          },
+          {
+            "name": "reply",
+            "example": "Tú",
+            "desc": "Texto escrito",
+            "required": false
+          },
+          {
+            "name": "suggestion",
+            "example": "",
+            "desc": "Segunda sugerencia del teclado",
+            "required": false
+          },
+          {
+            "name": "time",
+            "example": "Yesterday 8:11 PM",
+            "desc": "Fecha y hora",
+            "required": false
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color de los mensajes",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "perfilchat",
+        "desc": "Perfil de chat con foto y campos editables, sin datos personales de la referencia.",
+        "media": "image",
+        "params": [
+          {
+            "name": "name",
+            "example": "Pulse",
+            "desc": "Nombre",
+            "required": false
+          },
+          {
+            "name": "text",
+            "example": "Hola, uso Pulse",
+            "desc": "Información",
+            "required": false
+          },
+          {
+            "name": "image",
+            "example": "",
+            "desc": "Foto de perfil",
+            "required": false
+          },
+          {
+            "name": "username",
+            "example": "",
+            "desc": "Nombre de usuario",
+            "required": false
+          },
+          {
+            "name": "phone",
+            "example": "",
+            "desc": "Teléfono",
+            "required": false
+          },
+          {
+            "name": "link",
+            "example": "",
+            "desc": "Texto de enlaces",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "bratv2",
+        "desc": "bratV2: texto totalmente editable con efecto esférico.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "i <3\nmoney",
+            "desc": "Texto completo (admite saltos de línea y emojis)",
+            "required": true
+          },
+          {
+            "name": "bg",
+            "example": "ffffff",
+            "desc": "Color de fondo hex sin #",
+            "required": false
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto hex (vacío = negro)",
+            "required": false
+          },
+          {
+            "name": "canvas.size",
+            "example": "736",
+            "desc": "Lado del PNG en píxeles (200 - 2000)",
+            "required": false
+          },
+          {
+            "name": "uppercase",
+            "example": "false",
+            "desc": "true = convertir el texto a mayúsculas",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "brat",
+        "desc": "Sticker brat como el de Drive: texto grande y condensado, fondo blanco y emojis a color.",
+        "media": "image",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hehe this is brat 💸",
+            "desc": "Texto del sticker",
+            "required": true
+          },
+          {
+            "name": "bg",
+            "example": "ffffff",
+            "desc": "Color de fondo hex sin #",
+            "required": false
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto hex (vacío = negro)",
+            "required": false
+          },
+          {
+            "name": "canvas.size",
+            "example": "736",
+            "desc": "Lado del PNG en píxeles (200 - 2000)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "bratvideo",
+        "desc": "Video MP4 como el de Drive: palabras que aparecen progresivamente y emojis a color.",
+        "media": "video",
+        "params": [
+          {
+            "name": "text",
+            "example": "Welcome to Pulse API 💚🔥",
+            "desc": "Frase animada palabra por palabra (admite emojis)",
+            "required": true
+          },
+          {
+            "name": "bg",
+            "example": "ffffff",
+            "desc": "Color de fondo hex (ej. 8ACE00 o ffffff)",
+            "required": false
+          },
+          {
+            "name": "color",
+            "example": "",
+            "desc": "Color del texto hex (vacío = negro)",
+            "required": false
+          },
+          {
+            "name": "words",
+            "example": "5",
+            "desc": "Cuántas palabras entran por pantalla (1 - 8)",
+            "required": false
+          },
+          {
+            "name": "canvas.size",
+            "example": "512",
+            "desc": "Lado del video en píxeles (200 - 2000; se redondea a par)",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ia",
+    "name": "IA",
+    "desc": "Modelos y utilidades de inteligencia artificial",
+    "endpoints": [
+      {
+        "id": "gemini",
+        "desc": "Pregunta lo que quieras al modelo Gemini de Google (clave del servidor, sin token para el usuario).",
+        "media": "json",
+        "params": [
+          {
+            "name": "prompt",
+            "example": "Explica qué es Pulse API en una frase",
+            "desc": "Texto que le mandás al modelo",
+            "required": true
+          },
+          {
+            "name": "model",
+            "example": "gemini-2.0-flash",
+            "desc": "Modelo a usar",
+            "required": false,
+            "options": [
+              "gemini-2.0-flash",
+              "gemini-1.5-flash",
+              "gemini-1.5-pro"
+            ]
+          },
+          {
+            "name": "temperature",
+            "example": "0.7",
+            "desc": "Creatividad: 0 = exacto, 2 = muy creativo",
+            "required": false
+          },
+          {
+            "name": "maxTokens",
+            "example": "1024",
+            "desc": "Máximo de tokens de la respuesta (64 - 4096)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "image",
+        "desc": "Convierte un texto en imagen con la IA de Perchance (perchance.org/apigen). Devuelve la imagen directa; con ?format=json, los datos + base64.",
+        "media": "image",
+        "params": [
+          {
+            "name": "prompt",
+            "example": "un gato astronauta flotando en la luna, estilo anime",
+            "desc": "Qué querés que dibuje la IA (en inglés sale mejor)",
+            "required": true
+          },
+          {
+            "name": "style",
+            "example": "cinematic",
+            "desc": "Estilo artístico: se suma al prompt",
+            "required": false,
+            "options": [
+              "anime",
+              "cinematic",
+              "photo",
+              "digital-art",
+              "pixel-art",
+              "3d",
+              "oil-painting",
+              "watercolor",
+              "comic",
+              "minimal"
+            ]
+          },
+          {
+            "name": "resolution",
+            "example": "768x768",
+            "desc": "Tamaño de la imagen",
+            "required": false,
+            "options": [
+              "512x512",
+              "512x768",
+              "768x512",
+              "768x768"
+            ]
+          },
+          {
+            "name": "seed",
+            "example": "42",
+            "desc": "Semilla: mismo prompt + semilla ≈ misma imagen (vacío = al azar)",
+            "required": false
+          },
+          {
+            "name": "negativePrompt",
+            "example": "",
+            "desc": "Lo que NO querés que aparezca",
+            "required": false,
+            "advanced": true
+          },
+          {
+            "name": "guidance",
+            "example": "7",
+            "desc": "Qué tanto sigue el prompt (1 - 30)",
+            "required": false,
+            "advanced": true
+          },
+          {
+            "name": "provider",
+            "example": "auto",
+            "desc": "auto = Perchance con respaldo Pollinations; o forzar uno",
+            "required": false,
+            "options": [
+              "auto",
+              "perchance",
+              "pollinations"
+            ],
+            "advanced": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "descargas",
+    "name": "DESCARGAS",
+    "desc": "Videos, música, archivos y apps de redes sociales y tiendas, sin marca de agua",
+    "endpoints": [
+      {
+        "id": "tiktok",
+        "desc": "Video de TikTok sin marca de agua (MP4 + MP3 del audio).",
+        "media": "video",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.tiktok.com/@nasa/video/7300000000000000000",
+            "desc": "Enlace del video",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "pinterest",
+        "desc": "Video o imagen de un pin de Pinterest en su calidad original.",
+        "media": "video",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.pinterest.com/pin/902338475390432363/",
+            "desc": "Enlace del pin",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "instagram",
+        "desc": "Video o foto de un post o reel de Instagram.",
+        "media": "video",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.instagram.com/reel/Cxxxxxxxxxx/",
+            "desc": "Enlace del post o reel",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "facebook",
+        "desc": "Video de Facebook en HD (cae a SD si el HD no está disponible).",
+        "media": "video",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.facebook.com/watch/?v=1234567890",
+            "desc": "Enlace del video",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "spotify",
+        "desc": "Metadatos de Spotify (título, autor, portada) y preview MP3 de 30 s cuando existe.",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT",
+            "desc": "Enlace de track, álbum o playlist",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "youtubemp4",
+        "desc": "Video de YouTube en MP4 (cobalt si está configurado; si no, instancias Piped).",
+        "media": "video",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "desc": "Enlace del video",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "youtubemp3",
+        "desc": "Audio de YouTube convertido a MP3.",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "desc": "Enlace del video",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "audio",
+        "desc": "Extrae el audio de cualquier archivo remoto y lo devuelve en MP3 (ffmpeg).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://ejemplo.com/video.mp4",
+            "desc": "Enlace directo al archivo de video o audio",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "mediafire",
+        "desc": "Archivo de MediaFire: enlace directo, nombre y tamaño.",
+        "media": "json",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.mediafire.com/file/abc123/archivo.zip/file",
+            "desc": "Enlace del archivo de MediaFire",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "playstore",
+        "desc": "APK de una app de Google Play, resuelto con mirrors públicos (Play no permite APK directo).",
+        "media": "json",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://play.google.com/store/apps/details?id=com.whatsapp",
+            "desc": "Enlace de la ficha en Play Store (o el package com.whatsapp)",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "capcut",
+        "desc": "Video MP4 de un template de CapCut, sin marca de agua.",
+        "media": "video",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://www.capcut.com/template-detail/7123456789012345678",
+            "desc": "Enlace del template de CapCut",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el archivo (MP4/MP3/JPG) en lugar del JSON",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "busquedas",
+    "name": "BUSQUEDAS",
+    "desc": "Buscadores: Pinterest, TikTok, YouTube, fondos, Wikipedia, tiendas de apps y música",
+    "endpoints": [
+      {
+        "id": "pinterest",
+        "desc": "Busca pines (imágenes y videos) en Pinterest.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "anime",
+            "desc": "Qué buscar en Pinterest",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos resultados devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "tiktok",
+        "desc": "Busca videos de TikTok con título, autor, portada y enlace MP4.",
+        "media": "video",
+        "params": [
+          {
+            "name": "q",
+            "example": "gatos",
+            "desc": "Qué buscar en TikTok",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos resultados devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "youtube",
+        "desc": "Busca videos de YouTube: título, canal, duración, vistas y miniatura.",
+        "media": "video",
+        "params": [
+          {
+            "name": "q",
+            "example": "lofi hip hop",
+            "desc": "Qué buscar en YouTube",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos resultados devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "wallpapers",
+        "desc": "Fondos de pantalla de BestHDWallpapers (imagen original + página).",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "naruto",
+            "desc": "Qué fondo buscar (mejor en inglés)",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos fondos devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "wallpapersv2",
+        "desc": "Fondos de pantalla en movimiento de MotionBGs (video o preview).",
+        "media": "video",
+        "params": [
+          {
+            "name": "q",
+            "example": "rain",
+            "desc": "Qué fondo animado buscar (mejor en inglés)",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos fondos devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "stickerly",
+        "desc": "Stickers y vistas previas de packs públicos de Sticker.ly por nombre o personaje.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "gatitos",
+            "desc": "Qué sticker buscar",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos resultados devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "wiki",
+        "desc": "Artículos de Wikipedia: título, resumen, miniatura y enlace.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "Eniac",
+            "desc": "Qué buscar en la enciclopedia",
+            "required": true
+          },
+          {
+            "name": "lang",
+            "example": "es",
+            "desc": "Idioma de Wikipedia (es, en, pt, pt-br…)",
+            "required": false
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos artículos devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "playstore",
+        "desc": "Apps de Google Play: nombre, desarrollador, icono, nota y enlace a la ficha.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "whatsapp",
+            "desc": "Nombre de la app a buscar",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántas apps devolver (1 - 30)",
+            "required": false
+          },
+          {
+            "name": "country",
+            "example": "us",
+            "desc": "País de la tienda (us, es, ar, mx…)",
+            "required": false
+          },
+          {
+            "name": "lang",
+            "example": "en",
+            "desc": "Idioma del listado (en, es…)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "aptoide",
+        "desc": "Apps de Aptoide con versión, tamaño, descargas y enlace APK directo.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "whatsapp",
+            "desc": "Nombre o package de la app",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántos resultados devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "appstore",
+        "desc": "Apps de la App Store de Apple: nombre, desarrollador, icono, precio y enlace.",
+        "media": "image",
+        "params": [
+          {
+            "name": "q",
+            "example": "whatsapp",
+            "desc": "Nombre de la app a buscar",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántas apps devolver (1 - 30)",
+            "required": false
+          },
+          {
+            "name": "country",
+            "example": "us",
+            "desc": "País de la tienda (us, es, ar, mx…)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "play",
+        "desc": "Busca una canción por nombre (y autor opcional) y devuelve el audio para reproducir.",
+        "media": "audio",
+        "params": [
+          {
+            "name": "name",
+            "example": "Bohemian Rhapsody",
+            "desc": "Nombre de la canción",
+            "required": true
+          },
+          {
+            "name": "author",
+            "example": "Queen",
+            "desc": "Autor o artista (opcional)",
+            "required": false
+          },
+          {
+            "name": "limit",
+            "example": "5",
+            "desc": "Cuántas canciones devolver (1 - 30)",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "imagenes",
+    "name": "IMAGENES",
+    "desc": "Efectos de imagen: filtros y overlays sobre una foto",
+    "endpoints": [
+      {
+        "id": "grayscale",
+        "desc": "Convierte la foto a blanco y negro.",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pixel",
+        "desc": "Pixelado: agrupa la imagen en bloques cuadrados.",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "size",
+            "example": "12",
+            "desc": "Tamaño de cada bloque en px (1 - 100; más grande = más pixelado)",
+            "required": false
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sepia",
+        "desc": "Aplica el tono sepia clásico de las fotos antiguas.",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "blur",
+        "desc": "Desenfoque gaussiano de toda la imagen.",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "blur",
+            "example": "8",
+            "desc": "Intensidad del desenfoque (0.3 - 100)",
+            "required": false
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "invert",
+        "desc": "Invierte los colores (negativo).",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "darkness",
+        "desc": "Oscurece la foto; con level negativo la aclara.",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "level",
+            "example": "40",
+            "desc": "Cuánto oscurecer en % (1 - 95; negativo aclara)",
+            "required": false
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gay",
+        "desc": "Pone un overlay con la bandera arcoíris (franjas o degradé) sobre la foto.",
+        "media": "image",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://picsum.photos/800/600",
+            "desc": "Enlace directo a la imagen (o subila con Galería)",
+            "required": true
+          },
+          {
+            "name": "opacity",
+            "example": "55",
+            "desc": "Opacidad del overlay en % (0 - 100)",
+            "required": false
+          },
+          {
+            "name": "mode",
+            "example": "flag",
+            "desc": "Estilo del overlay: franjas de la bandera o degradé",
+            "required": false,
+            "options": [
+              "flag",
+              "glow"
+            ]
+          },
+          {
+            "name": "direction",
+            "example": "horizontal",
+            "desc": "Dirección de las franjas (sólo mode=flag)",
+            "required": false,
+            "options": [
+              "horizontal",
+              "vertical",
+              "diagonal"
+            ]
+          },
+          {
+            "name": "format",
+            "example": "jpeg",
+            "desc": "Formato de salida (jpeg no guarda transparencia)",
+            "required": false,
+            "options": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "name": "HERRAMIENTAS",
+    "desc": "Utilidades: emojis mezclados, países, clima, morse, traductor y Minecraft",
+    "endpoints": [
+      {
+        "id": "emojimix",
+        "desc": "Mezcla dos emojis con Emoji Kitchen de Google (si no existe la combinación, la compone con el set local).",
+        "media": "image",
+        "params": [
+          {
+            "name": "emoji1",
+            "example": "😂",
+            "desc": "Primer emoji (uno solo, sin secuencias)",
+            "required": true
+          },
+          {
+            "name": "emoji2",
+            "example": "🥰",
+            "desc": "Segundo emoji",
+            "required": true
+          },
+          {
+            "name": "direct",
+            "example": "false",
+            "desc": "true = devuelve el PNG en lugar del JSON",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "country",
+        "desc": "Ficha de un país: capital, región, población, moneda, idiomas, bandera y vecinos.",
+        "media": "json",
+        "params": [
+          {
+            "name": "q",
+            "example": "Argentina",
+            "desc": "Nombre del país (restcountries usa nombres en inglés: Argentina, Spain, Japan)",
+            "required": false
+          },
+          {
+            "name": "code",
+            "example": "",
+            "desc": "Código ISO de dos letras (AR, ES, JP); tiene prioridad sobre q",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "weather",
+        "desc": "Clima actual y pronóstico de 7 días de Open-Meteo (sin clave).",
+        "media": "json",
+        "params": [
+          {
+            "name": "city",
+            "example": "Maldonado",
+            "desc": "Ciudad o localidad",
+            "required": false
+          },
+          {
+            "name": "lat",
+            "example": "",
+            "desc": "Latitud (si no se manda ciudad)",
+            "required": false
+          },
+          {
+            "name": "lon",
+            "example": "",
+            "desc": "Longitud (junto con lat)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "morse",
+        "desc": "Codifica texto a morse y decodifica morse a texto (sin mode se detecta solo).",
+        "media": "json",
+        "params": [
+          {
+            "name": "text",
+            "example": "SOS",
+            "desc": "Texto a codificar o morse a decodificar (… --- …)",
+            "required": true
+          },
+          {
+            "name": "mode",
+            "example": "auto",
+            "desc": "auto detecta; encode siempre codifica y decode siempre decodifica",
+            "required": false,
+            "options": [
+              "auto",
+              "encode",
+              "decode"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "translate",
+        "desc": "Traduce texto a otro idioma (Google, Lingva o MyMemory). Por defecto traduce a inglés.",
+        "media": "json",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hola, ¿cómo estás?",
+            "desc": "Texto a traducir (máx. 2000 caracteres)",
+            "required": true
+          },
+          {
+            "name": "to",
+            "example": "en",
+            "desc": "Idioma destino (es, en, pt, fr, ja, zh-CN…)",
+            "required": false
+          },
+          {
+            "name": "from",
+            "example": "auto",
+            "desc": "Idioma origen; auto lo detecta",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "traductor",
+        "desc": "Igual que translate pero traduce al español por defecto.",
+        "media": "json",
+        "params": [
+          {
+            "name": "text",
+            "example": "Hello, how are you?",
+            "desc": "Texto a traducir",
+            "required": true
+          },
+          {
+            "name": "to",
+            "example": "es",
+            "desc": "Idioma destino (por defecto español)",
+            "required": false
+          },
+          {
+            "name": "from",
+            "example": "auto",
+            "desc": "Idioma origen; auto lo detecta",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "minecraft",
+        "desc": "Últimas versiones de Minecraft (Bedrock por defecto) desde los tags de Mojang, con respaldo en mcpedl.org.",
+        "media": "json",
+        "params": [
+          {
+            "name": "edition",
+            "example": "bedrock",
+            "desc": "Edición: bedrock, java o all",
+            "required": false,
+            "options": [
+              "bedrock",
+              "java",
+              "all"
+            ]
+          },
+          {
+            "name": "limit",
+            "example": "10",
+            "desc": "Cuántas versiones devolver (1 - 50)",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "juegos",
+    "name": "JUEGOS",
+    "desc": "Juegos rápidos por chat",
+    "endpoints": []
+  },
+  {
+    "id": "audios",
+    "name": "AUDIOS",
+    "desc": "Efectos de audio en MP3 (máximo 10 MB y 60 segundos)",
+    "endpoints": [
+      {
+        "id": "robot",
+        "desc": "Efecto de voz robot (modulación metálica).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "pitch",
+            "example": "1.0",
+            "desc": "Tono (0.5 - 2.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "reverse",
+        "desc": "Reproduce el audio al revés.",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "speed",
+            "example": "1.0",
+            "desc": "Velocidad de reproducción (0.5 - 2.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "demon",
+        "desc": "Efecto de voz demoníaca (grave y distorsionada).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "intensity",
+            "example": "1.0",
+            "desc": "Intensidad del efecto (0.0 - 1.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "bass",
+        "desc": "Efecto de graves profundos (sub-bass boost).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "gain",
+            "example": "1.0",
+            "desc": "Ganancia de graves (0.5 - 3.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "underwater",
+        "desc": "Efecto de sonido sumergido bajo el agua.",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "depth",
+            "example": "1.0",
+            "desc": "Profundidad (0.0 - 1.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "echo",
+        "desc": "Efecto de eco (reverberación repetitiva).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "delay",
+            "example": "0.5",
+            "desc": "Retraso entre ecos (0.1 - 2.0)",
+            "required": false
+          },
+          {
+            "name": "decay",
+            "example": "0.5",
+            "desc": "Decaimiento (0.0 - 1.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "chipmunk",
+        "desc": "Efecto de voz agudizada (estilo ardilla).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "pitch",
+            "example": "2.0",
+            "desc": "Tono (1.5 - 3.0)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "distortion",
+        "desc": "Efecto de distorsión (estilo saturado o fuzz).",
+        "media": "audio",
+        "params": [
+          {
+            "name": "url",
+            "example": "https://example.com/sample.mp3",
+            "desc": "URL del archivo de audio (requerido)",
+            "required": true
+          },
+          {
+            "name": "level",
+            "example": "0.5",
+            "desc": "Nivel de distorsión (0.0 - 1.0)",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "random",
+    "name": "RANDOM",
+    "desc": "Imágenes aleatorias de animales, sin clave",
+    "endpoints": [
+      {
+        "id": "duck",
+        "desc": "Pato al azar (random-d.uk, con respaldo en Wikimedia Commons).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "dog",
+        "desc": "Perro al azar con su raza (dog.ceo).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "cat",
+        "desc": "Gato al azar (The Cat API).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "rabbit",
+        "desc": "Conejo al azar, en GIF cuando la fuente lo permite (bunnies.io).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "squirrel",
+        "desc": "Ardilla al azar (fotos de Wikimedia Commons).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "panda",
+        "desc": "Panda gigante al azar, con un dato curioso (some-random-api).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "koala",
+        "desc": "Koala al azar (some-random-api y Wikimedia Commons).",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "babyowl",
+        "desc": "Bebé búho (polluelo) al azar, de Wikimedia Commons.",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "capybara",
+        "desc": "Carpincho al azar, de Wikimedia Commons.",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "babybear",
+        "desc": "Osito (cría de oso) al azar, de Wikimedia Commons.",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "baby",
+        "desc": "Una cría al azar: cachorro, gatito, patito, conejito, potrillo, ternero, corderito…",
+        "media": "image",
+        "params": [
+          {
+            "name": "count",
+            "example": "1",
+            "desc": "Cuántas imágenes devolver (1 - 10)",
+            "required": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,37 +1,42 @@
 # Pulse Bot
 
-Bot de WhatsApp basado en la estructura y los plugins de [Pain Bot](https://github.com/nexusday/pain-bot) (revisión `3e462a7`). Usa Baileys y añade comandos para [Pulse API](https://pulse-api-indol.vercel.app). Los plugins heredados de Pain Bot se conservan y algunos utilizan otros servicios; no todos han sido migrados a Pulse.
+Bot de WhatsApp basado en la estructura de [Pain Bot](https://github.com/nexusday/pain-bot), con los plugins originales reemplazados por comandos de [Pulse API](https://pulse-api-indol.vercel.app). El menú es una lista interactiva de categorías de Pulse.
 
 ## Instalación
 
-Requisitos: Node.js 20 o superior (recomendado 22), npm, Git y FFmpeg. En Linux instala FFmpeg con el gestor de paquetes de tu distribución. En Termux: `pkg install nodejs-lts git ffmpeg`.
+Necesitas Node.js 20 o superior (recomendado 22), npm, Git y FFmpeg. En Termux: `pkg install nodejs-lts git ffmpeg`.
 
 ```sh
-npm install
+npm ci
 cp config.example.js config.js
-# Edita config.js: configura global.owner con tu número internacional sin + ni espacios.
+# Edita global.owner en config.js con tu número internacional sin + ni espacios.
 npm start
 ```
 
-Al iniciar, elige `qr` para escanear desde **WhatsApp → Dispositivos vinculados**, o `code` para vincular mediante número. Mantén privada la carpeta `sessions/`: contiene las credenciales de la cuenta. `config.js`, sesiones y bases de datos de usuario no se versionan. El uso de bibliotecas no oficiales puede estar sujeto a restricciones de WhatsApp.
+Elige `qr` para vincular desde **WhatsApp → Dispositivos vinculados** o `code` para usar un código de vinculación. Mantén privada la carpeta `sessions/`, que contiene las credenciales. El uso de bibliotecas no oficiales puede estar sujeto a restricciones de WhatsApp.
 
 ## Menú y comandos
 
-Envía `.menu` para abrir el menú en **lista interactiva** y selecciona **PULSE API**. Si el envío interactivo falla, se muestra el menú completo en texto. La disponibilidad de listas depende del cliente de WhatsApp. También puedes usar directamente:
+Envía `.menu`, selecciona una categoría y verás sus comandos. Si la lista no funciona en tu cliente, usa `.menu anime`, `.menu ia`, `.menu canvas`, `.menu descargas`, `.menu busquedas`, `.menu imagenes`, `.menu herramientas`, `.menu audios` o `.menu random`. La categoría juegos está vacía en el catálogo de Pulse y no aparece.
 
-| Comando | Uso |
-|---|---|
-| `.pulseia <pregunta>` | Gemini |
-| `.pulseimagen <descripción>` | Generar imagen |
-| `.pulsewiki <búsqueda>` / `.pulseyoutube <búsqueda>` | Buscar |
-| `.pulseanime <nombre>` / `.pulsepokemon <nombre>` | Anime y Pokémon |
-| `.pulseclima <ciudad>` / `.pulsepais <país>` | Información |
-| `.pulsemorse <texto>` / `.pulsetraducir <texto>` | Herramientas; traductor al español |
-| `.pulsegato` / `.pulseperro` | Imagen aleatoria (datos y enlace) |
+Se incluyen los **76 endpoints** del catálogo público de Pulse API en la instantánea `lib/pulse-catalog.json`. Cada uno tiene el comando `.p_<categoría>_<endpoint>` y también se puede invocar como `.pulse <categoría> <endpoint>`. Por ejemplo:
 
-Las respuestas JSON se muestran como texto y las imágenes binarias se envían como imagen. Los servicios externos pueden fallar o limitar las peticiones; Gemini requiere que el servidor de Pulse tenga su clave configurada. La URL por defecto es `https://pulse-api-indol.vercel.app`; para usar otra instancia define `PULSE_API_URL` antes de iniciar.
+```text
+.p_ia_gemini ¿Qué es Pulse?
+.p_anime_pokemon pikachu
+.p_canvas_brat texto de ejemplo | bg=8ACE00
+.p_herramientas_emojimix emoji1=😂 | emoji2=🥰
+.p_imagenes_pixel https://ejemplo.com/foto.jpg | size=12
+.p_audios_reverse https://ejemplo.com/audio.mp3
+.p_descargas_tiktok https://ejemplo.com/video | direct=true
+.pulse busquedas wiki Uruguay
+```
 
-El catálogo de personajes grande y los archivos OCR entrenados no se incluyen. Para regenerar el catálogo opcional ejecuta `npm run sync:chars` con acceso a Kitsu. Algunas funciones heredadas necesitan dependencias o datos adicionales: la transcripción local usa `@xenova/transformers` (dependencia opcional, cuya instalación puede fallar según la plataforma) y OCR puede requerir archivos de idioma. Consulta el proyecto original para detalles de sus plugins.
+El primer valor sin nombre corresponde al primer parámetro del endpoint; para varios parámetros usa `nombre=valor`, separados por `|`. El bot muestra los parámetros obligatorios si falta alguno. Las imágenes y audios de efectos requieren una **URL pública directa**, no una foto o audio adjunto. Para descargas, la respuesta predeterminada es JSON con metadatos y enlaces; `direct=true` solicita el archivo si Pulse lo ofrece. Las respuestas de imagen, audio y video se envían como medios, y los documentos como adjuntos, con un límite de 20 MB. Las respuestas JSON se muestran como texto (hasta 12.000 caracteres).
+
+Se mantienen los alias anteriores, como `.pulseia`, `.pulsewiki`, `.pulseimagen` y `.pulseclima`. Los endpoints dependen de la disponibilidad de Pulse y de sus proveedores; Gemini requiere que el servidor de Pulse tenga configurada su clave. La URL predeterminada es `https://pulse-api-indol.vercel.app`; puede cambiarse con la variable de entorno `PULSE_API_URL`.
+
+El catálogo es una instantánea, no se actualiza automáticamente; cuando Pulse agregue endpoints hay que actualizar `lib/pulse-catalog.json`. No se incluyen los plugins de Pain Bot, por lo que los comandos de administración, juegos y sub-bots originales ya no están disponibles.
 
 ## Pruebas
 
@@ -39,4 +44,4 @@ El catálogo de personajes grande y los archivos OCR entrenados no se incluyen. 
 npm test
 ```
 
-Las pruebas de Pulse simulan la API; no requieren cuenta de WhatsApp ni acceso a la red. No sustituyen una prueba de vinculación real.
+Las pruebas simulan Pulse API y WhatsApp; no sustituyen una prueba real de vinculación o de disponibilidad del servidor.
